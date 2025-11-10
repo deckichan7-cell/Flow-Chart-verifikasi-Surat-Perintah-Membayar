@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BPODT — Flow Chart verifikasi SPM & Infografik + Checklist MAK</title>
+<style>
+  :root{
+    --primary:#1f4b82;
+    --accent:#0ea5e9;
+    --ink:#0f172a;
+    --muted:#475569;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --radius:16px;
+    --shadow:0 8px 28px rgba(2,8,23,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:1060px;margin:40px auto;padding:0 20px}
+  header{
+    background:linear-gradient(135deg,var(--primary),#0b2e55);
+    color:#fff;border-radius:24px;padding:28px 24px;box-shadow:var(--shadow);
+  }
+  header h1{margin:0 0 6px;font-size:28px}
+  header p{margin:6px 0 0;color:#dbeafe}
+  .pill{display:inline-block;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.25);padding:6px 10px;
+    border-radius:999px;margin-right:8px;font-size:13px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:18px 0}
+  .grid{display:grid;gap:16px}
+  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  h2{font-size:22px;margin:8px 0 12px}
+  h3{font-size:18px;margin:8px 0}
+  .badge{font-size:12px;border:1px solid #e2e8f0;border-radius:999px;padding:2px 8px;color:#334155;background:#f8fafc}
+  .btn{display:inline-block;border-radius:12px;border:1px solid #cbd5e1;padding:10px 14px;
+    font-weight:600;box-shadow:0 1px 0 white inset;background:linear-gradient(#fff,#f8fafc);color:#0f172a}
+  .btn:hover{filter:brightness(.98)}
+  .flow{display:flex;flex-direction:column;gap:14px}
+  .step{position:relative;background:#fff;border:1px solid #e2e8f0;
+    border-radius:14px;padding:14px 14px 14px 56px;}
+  .step::before{content:attr(data-step);position:absolute;left:12px;top:12px;
+    min-width:28px;height:28px;display:grid;place-items:center;border-radius:999px;
+    background:var(--primary);color:#fff;font-weight:700}
+  .arrow{height:24px;display:flex;align-items:center;justify-content:center;color:#64748b}
+  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e2e8f0;
+    border-radius:14px;overflow:hidden}
+  th,td{padding:10px 12px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+  th{background:#f8fafc;text-align:left;font-size:14px}
+  tr:last-child td{border-bottom:none}
+  .checkbox{display:flex;align-items:center;gap:8px}
+  input[type="checkbox"]{width:18px;height:18px}
+  .tips{background:#eff6ff;border:1px solid #c7d2fe;border-radius:14px;padding:14px;display:flex;gap:10px;align-items:flex-start}
+  .tips .icon{font-weight:700}
+  @media print{
+    .wrap{max-width:none;margin:0;padding:0}
+    header{border-radius:0;box-shadow:none}
+    .no-print{display:none!important}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="pill">BPODT • Divisi Keuangan</div>
+      <div class="pill">PMK 210/2022</div>
+      <h1>Flow Chart verifikasi Surat Perintah Membayar dan Infografik & Checklist verifikasi kode Akun Mata Anggaran Kegiatan</h1>
+      <p>Disusun berdasarkan SOP No. 02, 04, 05 BPODT dan PMK 210/2022 — Versi HTML siap cetak.</p>
+    </header>
+
+    <section id="rujukan" class="card">
+      <h2>Rujukan (PMK + SOP)</h2>
+      <ul>
+        <li>PMK No. 210/PMK.05/2022</li>
+        <li>SOP No. 02, 04, dan 05/DKUKP/BPODT</li>
+      </ul>
+    </section>
+
+    <section id="tips" class="card">
+      <h2>Tips</h2>
+      <div class="tips">
+        <div class="icon">💡</div>
+        <div>Saat verifikasi, buka DIPA/POK dan daftar BAS berdampingan. Cocokkan objek belanja dengan Kode MAK yang tersedia pada kegiatan yang sama.</div>
+      </div>
+    </section>
+
+    <section id="infografik" class="card">
+      <h2>Infografik Alur & Peran</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Alur Utama</h3>
+          <ol>
+            <li>Pengajuan Dokumen</li>
+            <li>Verifikasi Kelengkapan & Kode MAK</li>
+            <li>Input SAKTI & Draft SPP</li>
+            <li>PPK uji materiil & terbitkan SPP-LS</li>
+            <li>PPSPM uji formal & terbitkan SPM</li>
+            <li>KPPN terbitkan SP2D</li>
+            <li>Pembayaran & Arsip</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Peran Kunci</h3>
+          <ul>
+            <li><strong>Tim Teknis:</strong> Menyusun dan menyerahkan dokumen.</li>
+            <li><strong>Verifikator:</strong> Memeriksa kelengkapan & kesesuaian MAK/DIPA.</li>
+            <li><strong>Operator:</strong> Input pada SAKTI & menyusun Draf SPP.</li>
+            <li><strong>PPK:</strong> Pengujian materiil & otorisasi SPP-LS.</li>
+            <li><strong>PPSPM:</strong> Pengujian formal & penerbitan SPM.</li>
+            <li><strong>KPPN:</strong> Penelitian & pengujian SPM → SP2D.</li>
+            <li><strong>Bendahara:</strong> Pembayaran & pengarsipan bukti.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="card">
+      <h2>Flow Chart Verifikasi Surat Perintah Membayar (SPM)</h2>
+      <div class="flow">
+        <div class="step" data-step="1"><div class="title">Pengajuan Dokumen — <span class="badge">Tim Teknis/Pengusul</span></div>
+        <div>Surat Tugas/Nota Dinas, Nominatif, Kwitansi, Laporan.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="2"><div class="title">Verifikasi Awal & Kode MAK — <span class="badge">Verifikator/Sekretariat</span></div>
+        <div>Pemeriksaan kelengkapan, kesesuaian MAK dengan DIPA/POK, dan ketersediaan pagu.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="3"><div class="title">Input ke SAKTI — <span class="badge">Operator Pembayaran</span></div>
+        <div>Input pada aplikasi SAKTI & penyusunan Draf SPP.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="4"><div class="title">Pengujian Materiil & SPP-LS — <span class="badge">PPK</span></div>
+        <div>Pengujian materiil & penerbitan SPP-LS.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="5"><div class="title">Pengujian Formal & SPM — <span class="badge">PPSPM</span></div>
+        <div>Pengujian formal SPP & penerbitan SPM.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="6"><div class="title">SP2D — <span class="badge">KPPN</span></div>
+        <div>Penerbitan SP2D.</div></div>
+        <div class="arrow">▼</div>
+        <div class="step" data-step="7"><div class="title">Pembayaran — <span class="badge">Bendahara/Rekanan</span></div>
+        <div>Transfer dana & pengarsipan.</div></div>
+      </div>
+    </section>
+
+    <section id="checklist" class="card">
+      <h2>Checklist Kelengkapan Dokumen dalam SPM</h2>
+      <table>
+        <thead>
+          <tr><th style="width:48px">No</th><th>Dokumen</th><th>Keterangan</th><th style="width:90px">Status</th><th>Catatan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Surat Pengantar / Nota Dinas</td><td>Pengantar dari unit kerja pemohon pembayaran</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>2</td><td>SPP-LS dari PPK</td><td>Surat Permintaan Pembayaran lengkap dengan tanda tangan PPK</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>3</td><td>RAB / KAK / Kontrak</td><td>Dokumen dasar kegiatan sesuai output</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>4</td><td>Bukti Pembayaran / Kwitansi</td><td>Faktur/Invoice & bukti penerimaan</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>5</td><td>Dokumen Perpajakan</td><td>Faktur Pajak, SSP/SSP Pajak, Bukti Potong</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>6</td><td>Rekening Penerima / Nominatif</td><td>Data rekening valid penerima hak</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+          <tr><td>7</td><td>Laporan Pertanggungjawaban (LPJ)</td><td>Laporan kegiatan & dokumentasi</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div style="text-align:center;margin:18px 0">
+      <a class="btn" href="javascript:window.print()">🖨️ Cetak / Simpan PDF</a>
+    </div>
+
+    <footer class="card" style="text-align:center">
+      <div>© BPODT • Divisi Keuangan — Versi HTML cetak</div>
+    </footer>
+  </div>
+</body>
+</html>
