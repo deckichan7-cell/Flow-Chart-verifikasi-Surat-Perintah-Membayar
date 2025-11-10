@@ -30,10 +30,14 @@
     border:1px solid rgba(255,255,255,.25);padding:6px 10px;
     border-radius:999px;margin-right:8px;font-size:13px}
   .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:18px 0}
-  .grid{display:grid;gap:16px}
-  .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
   h2{font-size:22px;margin:8px 0 12px}
   h3{font-size:18px;margin:8px 0}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{text-decoration:underline}
+  /* Horizontal TOC */
+  .toc-horizontal{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:8px 12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:flex-start}
+  .toc-horizontal a{padding:6px 10px;border-radius:999px;background:#f1f5f9}
+  .toc-horizontal a:hover{background:#e2e8f0}
   .badge{font-size:12px;border:1px solid #e2e8f0;border-radius:999px;padding:2px 8px;color:#334155;background:#f8fafc}
   .btn{display:inline-block;border-radius:12px;border:1px solid #cbd5e1;padding:10px 14px;
     font-weight:600;box-shadow:0 1px 0 white inset;background:linear-gradient(#fff,#f8fafc);color:#0f172a}
@@ -71,14 +75,24 @@
       <p>Disusun berdasarkan SOP No. 02, 04, 05 BPODT dan PMK 210/2022 — Versi HTML siap cetak.</p>
     </header>
 
+    <!-- RUJUKAN ditempatkan paling atas setelah judul -->
     <section id="rujukan" class="card">
       <h2>Rujukan (PMK + SOP)</h2>
       <ul>
         <li>PMK No. 210/PMK.05/2022</li>
         <li>SOP No. 02, 04, dan 05/DKUKP/BPODT</li>
       </ul>
+      <!-- TOC Horizontal Ringkas -->
+      <nav class="toc-horizontal" aria-label="Daftar Isi Cepat">
+        <a href="#tips">💡 Tips</a>
+        <a href="#infografik">📊 Infografik</a>
+        <a href="#flow">🧾 Flow SPM</a>
+        <a href="#checklist">📋 Checklist SPM</a>
+        <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️ Ke Atas</a>
+      </nav>
     </section>
 
+    <!-- TIPS -->
     <section id="tips" class="card">
       <h2>Tips</h2>
       <div class="tips">
@@ -87,6 +101,7 @@
       </div>
     </section>
 
+    <!-- INFOGRAFIK -->
     <section id="infografik" class="card">
       <h2>Infografik Alur & Peran</h2>
       <div class="grid grid-2">
@@ -117,6 +132,7 @@
       </div>
     </section>
 
+    <!-- FLOW CHART -->
     <section id="flow" class="card">
       <h2>Flow Chart Verifikasi Surat Perintah Membayar (SPM)</h2>
       <div class="flow">
@@ -143,6 +159,7 @@
       </div>
     </section>
 
+    <!-- CHECKLIST -->
     <section id="checklist" class="card">
       <h2>Checklist Kelengkapan Dokumen dalam SPM</h2>
       <table>
