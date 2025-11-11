@@ -11,9 +11,9 @@
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
     font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.4;font-size:14px}
   .wrap{max-width:1000px;margin:20px auto;padding:0 14px}
-  header{background:linear-gradient(135deg,var(--primary),#0b2e55);color:#fff;border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+  header{text-align:center;background:linear-gradient(135deg,var(--primary),#0b2e55);color:#fff;border-radius:14px;padding:14px;box-shadow:var(--shadow)}
   .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:3px 8px;border-radius:999px;margin-right:8px;font-size:12px}
-  h1{margin:4px 0 2px;font-size:20px}
+  h1{text-align:center;margin:4px 0 2px;font-size:20px}
   .subtitle{text-align:center;color:#e2e8f0;margin:0 0 6px;font-size:12px}
   .card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:10px;margin:8px 0}
   .tight{padding:8px;margin:6px 0}
@@ -41,26 +41,36 @@
   @page{size:A4;margin:10mm}
   @media print{
     body{background:#fff}
-    header{background:#fff;color:#000;border:1px solid #e5e7eb;box-shadow:none}
+    header{text-align:center;background:linear-gradient(135deg,var(--primary),#0b2e55);color:#fff;border-radius:14px;padding:14px;box-shadow:var(--shadow)}
     .pill{display:none}
     .card{box-shadow:none;border:1px solid #e5e7eb;border-radius:8px}
     .wrap{max-width:none;margin:0;padding:0}
-    h1{font-size:18px}
-    .subtitle{color:#000}
+    h1{text-align:center;margin:4px 0 2px;font-size:20px}
+    .subtitle{text-align:center;color:#e2e8f0;margin:0 0 6px;font-size:12px}
     th,td{padding:4px 5px;font-size:11px}
     .underline{border:none;border-bottom:1px solid #000}
     textarea{min-height:20px}
     .btn{display:none}
+  }
+
+  .formline.centered {
+    justify-content: center;
+    text-align: center;
+  }
+  .formline.centered label {
+    text-align: right;
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="pill">BPODT • Divisi Keuangan</div>
-    <div class="pill">PMK 210/2022</div>
     <h1>FORMULIR PENGAJUAN PENGGUNAAN ANGGARAN DAN PEMBAYARAN TAGIHAN</h1>
     <div class="subtitle">Badan Pelaksana Otorita Danau Toba – Divisi Keuangan</div>
+    <div class="formline centered" style="margin-top:6px;margin-bottom:10px">
+      <div><label>Kegiatan, Output, MAK :</label> <input class="underline" type="text" style="min-width:400px"></div>
+      <div><label>Kode :</label> <input class="underline short" type="text"></div>
+    </div>
   </header>
 
   <!-- Identitas singkat -->
