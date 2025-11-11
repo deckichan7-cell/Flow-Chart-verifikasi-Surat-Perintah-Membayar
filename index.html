@@ -2,189 +2,233 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BPODT — Flow Chart verifikasi SPM & Infografik + Checklist MAK</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BPODT — Formulir Pengajuan Anggaran & Pembayaran Tagihan (v18 • A4 Portrait)</title>
 <style>
-  :root{
-    --primary:#1f4b82;
-    --accent:#0ea5e9;
-    --ink:#0f172a;
-    --muted:#475569;
-    --bg:#f8fafc;
-    --card:#ffffff;
-    --radius:16px;
-    --shadow:0 8px 28px rgba(2,8,23,.08);
-  }
+  :root{--primary:#1f4b82;--ink:#0f172a;--bg:#f8fafc;--card:#fff;--shadow:0 8px 24px rgba(2,8,23,.06)}
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
-  .wrap{max-width:1060px;margin:40px auto;padding:0 20px}
-  header{
-    background:linear-gradient(135deg,var(--primary),#0b2e55);
-    color:#fff;border-radius:24px;padding:28px 24px;box-shadow:var(--shadow);
-  }
-  header h1{margin:0 0 6px;font-size:28px}
-  header p{margin:6px 0 0;color:#dbeafe}
-  .pill{display:inline-block;background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.25);padding:6px 10px;
-    border-radius:999px;margin-right:8px;font-size:13px}
-  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:18px 0}
-  h2{font-size:22px;margin:8px 0 12px}
-  h3{font-size:18px;margin:8px 0}
-  a{color:var(--primary);text-decoration:none}
-  a:hover{text-decoration:underline}
-  /* Horizontal TOC */
-  .toc-horizontal{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:8px 12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:flex-start}
-  .toc-horizontal a{padding:6px 10px;border-radius:999px;background:#f1f5f9}
-  .toc-horizontal a:hover{background:#e2e8f0}
-  .badge{font-size:12px;border:1px solid #e2e8f0;border-radius:999px;padding:2px 8px;color:#334155;background:#f8fafc}
-  .btn{display:inline-block;border-radius:12px;border:1px solid #cbd5e1;padding:10px 14px;
-    font-weight:600;box-shadow:0 1px 0 white inset;background:linear-gradient(#fff,#f8fafc);color:#0f172a}
-  .btn:hover{filter:brightness(.98)}
-  .flow{display:flex;flex-direction:column;gap:14px}
-  .step{position:relative;background:#fff;border:1px solid #e2e8f0;
-    border-radius:14px;padding:14px 14px 14px 56px;}
-  .step::before{content:attr(data-step);position:absolute;left:12px;top:12px;
-    min-width:28px;height:28px;display:grid;place-items:center;border-radius:999px;
-    background:var(--primary);color:#fff;font-weight:700}
-  .arrow{height:24px;display:flex;align-items:center;justify-content:center;color:#64748b}
-  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e2e8f0;
-    border-radius:14px;overflow:hidden}
-  th,td{padding:10px 12px;border-bottom:1px solid #e2e8f0;vertical-align:top}
-  th{background:#f8fafc;text-align:left;font-size:14px}
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.4;font-size:14px}
+  .wrap{max-width:1000px;margin:20px auto;padding:0 14px}
+  header{background:linear-gradient(135deg,var(--primary),#0b2e55);color:#fff;border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+  .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:3px 8px;border-radius:999px;margin-right:8px;font-size:12px}
+  h1{margin:4px 0 2px;font-size:20px}
+  .subtitle{text-align:center;color:#e2e8f0;margin:0 0 6px;font-size:12px}
+  .card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:10px;margin:8px 0}
+  .tight{padding:8px;margin:6px 0}
+  .formline{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:2px 0 6px}
+  .formline label{font-weight:600;margin-right:6px}
+  .underline{border:none;border-bottom:1px solid #0f172a;outline:none;padding:2px 3px;min-width:200px}
+  .underline.short{min-width:140px}
+  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+  th,td{padding:5px 6px;border-bottom:1px solid #e2e8f0;vertical-align:top;font-size:12px}
+  th{background:#f8fafc;text-align:left}
   tr:last-child td{border-bottom:none}
-  .checkbox{display:flex;align-items:center;gap:8px}
-  input[type="checkbox"]{width:18px;height:18px}
-  .tips{background:#eff6ff;border:1px solid #c7d2fe;border-radius:14px;padding:14px;display:flex;gap:10px;align-items:flex-start}
-  .tips .icon{font-weight:700}
+  .section{background:#eef2f7;font-weight:700}
+  .center{text-align:center}
+  input[type="checkbox"]{width:15px;height:15px}
+  input[type="radio"]{width:13px;height:13px}
+  textarea{width:100%;min-height:24px;border:1px solid #cbd5e1;border-radius:6px;padding:4px;font-family:inherit;font-size:12px}
+  .btn{display:inline-block;border-radius:10px;border:1px solid #cbd5e1;padding:8px 12px;font-weight:600;
+    background:linear-gradient(#fff,#f8fafc);color:#0f172a;text-decoration:none}
+  .btn:hover{filter:brightness(.98)}
+  .hdrgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .nameparaf .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .label{font-weight:700;margin-bottom:2px}
+
+  /* CETAK A4 Portrait satu halaman */
+  @page{size:A4;margin:10mm}
   @media print{
-    .wrap{max-width:none;margin:0;padding:0}
-    header{border-radius:0;box-shadow:none}
-    .no-print{display:none!important}
     body{background:#fff}
+    header{background:#fff;color:#000;border:1px solid #e5e7eb;box-shadow:none}
+    .pill{display:none}
+    .card{box-shadow:none;border:1px solid #e5e7eb;border-radius:8px}
+    .wrap{max-width:none;margin:0;padding:0}
+    h1{font-size:18px}
+    .subtitle{color:#000}
+    th,td{padding:4px 5px;font-size:11px}
+    .underline{border:none;border-bottom:1px solid #000}
+    textarea{min-height:20px}
+    .btn{display:none}
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="pill">BPODT • Divisi Keuangan</div>
-      <div class="pill">PMK 210/2022</div>
-      <h1>Flow Chart verifikasi Surat Perintah Membayar dan Infografik & Checklist verifikasi kode Akun Mata Anggaran Kegiatan</h1>
-      <p>Disusun berdasarkan SOP No. 02, 04, 05 BPODT dan PMK 210/2022 — Versi HTML siap cetak.</p>
-    </header>
+<div class="wrap">
+  <header>
+    <div class="pill">BPODT • Divisi Keuangan</div>
+    <div class="pill">PMK 210/2022</div>
+    <h1>FORMULIR PENGAJUAN PENGGUNAAN ANGGARAN DAN PEMBAYARAN TAGIHAN</h1>
+    <div class="subtitle">Badan Pelaksana Otorita Danau Toba – Divisi Keuangan</div>
+  </header>
 
-    <!-- RUJUKAN ditempatkan paling atas setelah judul -->
-    <section id="rujukan" class="card">
-      <h2>Rujukan (PMK + SOP)</h2>
-      <ul>
-        <li>PMK No. 210/PMK.05/2022</li>
-        <li>SOP No. 02, 04, dan 05/DKUKP/BPODT</li>
-      </ul>
-      <!-- TOC Horizontal Ringkas -->
-      <nav class="toc-horizontal" aria-label="Daftar Isi Cepat">
-        <a href="#tips">💡 Tips</a>
-        <a href="#infografik">📊 Infografik</a>
-        <a href="#flow">🧾 Flow SPM</a>
-        <a href="#checklist">📋 Checklist SPM</a>
-        <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️ Ke Atas</a>
-      </nav>
-    </section>
+  <!-- Identitas singkat -->
+  <section class="card tight">
+    <div class="formline">
+      <div><label for="nomor">Nomor Surat</label> <input id="nomor" class="underline" type="text"></div>
+      <div><label for="tanggal">Tanggal</label> <input id="tanggal" class="underline" type="text"></div>
+    </div>
+  </section>
 
-    <!-- TIPS -->
-    <section id="tips" class="card">
-      <h2>Tips</h2>
-      <div class="tips">
-        <div class="icon">💡</div>
-        <div>Saat verifikasi, buka DIPA/POK dan daftar BAS berdampingan. Cocokkan objek belanja dengan Kode MAK yang tersedia pada kegiatan yang sama.</div>
-      </div>
-    </section>
+  <!-- PARAF & CATATAN (di atas checklist) -->
+  <section class="card tight" id="paraf">
+    <h2 style="margin:0 0 6px">Paraf & Catatan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3">
+            <div class="hdrgrid">
+              <div><strong>TANGGAL PENGAJUAN:</strong> <input class="underline short" type="text"></div>
+              <div><strong>NOMOR FORMULIR PENGAJUAN:</strong> <input class="underline" type="text"></div>
+              <div><strong>PERIHAL:</strong> <input class="underline" type="text"></div>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th style="width:22%">ROLE</th>
+          <th style="width:38%">NAMA & PARAF</th>
+          <th>CATATAN (Hari/Tanggal)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>YANG MENGAJUKAN</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>STAF PENERIMA / PEMERIKSA DOKUMEN</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>PEJABAT PEMBUAT KOMITMEN</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>BENDAHARA</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>PEJABAT PENANDATANGAN SPM</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>PEJABAT PENGADAAN BARANG/JASA</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>KEPALA DIVISI KEUANGAN</td>
+          <td class="nameparaf">
+            <div class="row"><span>Nama:</span> <input class="underline" type="text"></div>
+            <div class="row"><span>Paraf:</span> <input class="underline short" type="text"></div>
+          </td>
+          <td>
+            <div class="label">CATATAN:</div>
+            <textarea></textarea>
+            <div class="row" style="margin-top:4px;display:flex;gap:6px;align-items:center"><span>Hari/Tanggal:</span> <input class="underline short" type="text"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <!-- INFOGRAFIK -->
-    <section id="infografik" class="card">
-      <h2>Infografik Alur & Peran</h2>
-      <div class="grid grid-2">
-        <div>
-          <h3>Alur Utama</h3>
-          <ol>
-            <li>Pengajuan Dokumen</li>
-            <li>Verifikasi Kelengkapan & Kode MAK</li>
-            <li>Input SAKTI & Draft SPP</li>
-            <li>PPK uji materiil & terbitkan SPP-LS</li>
-            <li>PPSPM uji formal & terbitkan SPM</li>
-            <li>KPPN terbitkan SP2D</li>
-            <li>Pembayaran & Arsip</li>
-          </ol>
-        </div>
-        <div>
-          <h3>Peran Kunci</h3>
-          <ul>
-            <li><strong>Tim Teknis:</strong> Menyusun dan menyerahkan dokumen.</li>
-            <li><strong>Verifikator:</strong> Memeriksa kelengkapan & kesesuaian MAK/DIPA.</li>
-            <li><strong>Operator:</strong> Input pada SAKTI & menyusun Draf SPP.</li>
-            <li><strong>PPK:</strong> Pengujian materiil & otorisasi SPP-LS.</li>
-            <li><strong>PPSPM:</strong> Pengujian formal & penerbitan SPM.</li>
-            <li><strong>KPPN:</strong> Penelitian & pengujian SPM → SP2D.</li>
-            <li><strong>Bendahara:</strong> Pembayaran & pengarsipan bukti.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <!-- CHECKLIST (tanpa subjudul) -->
+  <section class="card tight" id="checklist">
+    <table>
+      <thead>
+        <tr>
+          <th>JENIS DOKUMEN PENGAJUAN</th>
+          <th style="width:38%">KELENGKAPAN DOKUMEN</th>
+          <th class="center" colspan="2">KESESUAIAN DGN STANDAR BIAYA</th>
+          <th class="center" colspan="2">KESESUAIAN JUMLAH PERHITUNGAN</th>
+          <th style="width:18%">KETERANGAN</th>
+        </tr>
+        <tr>
+          <th></th><th></th>
+          <th class="center" style="width:40px">YA</th><th class="center" style="width:60px">TIDAK</th>
+          <th class="center" style="width:40px">YA</th><th class="center" style="width:60px">TIDAK</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section"><td colspan="7">1. PERJALANAN DINAS</td></tr>
+        <tr><td>Perjalanan Dinas</td><td><label><input type="checkbox"> 1. Undangan / Disposisi</label></td><td class="center"><input type="radio" name="pd1a"></td><td class="center"><input type="radio" name="pd1a"></td><td class="center"><input type="radio" name="pd1b"></td><td class="center"><input type="radio" name="pd1b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 2. Surat Tugas / Izin Setneg</label></td><td class="center"><input type="radio" name="pd2a"></td><td class="center"><input type="radio" name="pd2a"></td><td class="center"><input type="radio" name="pd2b"></td><td class="center"><input type="radio" name="pd2b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 3. Surat Perjalanan Dinas (SPD)</label></td><td class="center"><input type="radio" name="pd3a"></td><td class="center"><input type="radio" name="pd3a"></td><td class="center"><input type="radio" name="pd3b"></td><td class="center"><input type="radio" name="pd3b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 4. Lembar Visum</label></td><td class="center"><input type="radio" name="pd4a"></td><td class="center"><input type="radio" name="pd4a"></td><td class="center"><input type="radio" name="pd4b"></td><td class="center"><input type="radio" name="pd4b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 5. Laporan / hasil rapat</label></td><td class="center"><input type="radio" name="pd5a"></td><td class="center"><input type="radio" name="pd5a"></td><td class="center"><input type="radio" name="pd5b"></td><td class="center"><input type="radio" name="pd5b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 6. Daftar nominatif</label></td><td class="center"><input type="radio" name="pd6a"></td><td class="center"><input type="radio" name="pd6a"></td><td class="center"><input type="radio" name="pd6b"></td><td class="center"><input type="radio" name="pd6b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 7. Kwitansi perjalanan dinas</label></td><td class="center"><input type="radio" name="pd7a"></td><td class="center"><input type="radio" name="pd7a"></td><td class="center"><input type="radio" name="pd7b"></td><td class="center"><input type="radio" name="pd7b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 8. Tiket / boarding pass / kwitansi hotel / karcis / daftar pengeluaran riil / tanda bukti pengeluaran lain</label></td><td class="center"><input type="radio" name="pd8a"></td><td class="center"><input type="radio" name="pd8a"></td><td class="center"><input type="radio" name="pd8b"></td><td class="center"><input type="radio" name="pd8b"></td><td><textarea></textarea></td></tr>
 
-    <!-- FLOW CHART -->
-    <section id="flow" class="card">
-      <h2>Flow Chart Verifikasi Surat Perintah Membayar (SPM)</h2>
-      <div class="flow">
-        <div class="step" data-step="1"><div class="title">Pengajuan Dokumen — <span class="badge">Tim Teknis/Pengusul</span></div>
-        <div>Surat Tugas/Nota Dinas, Nominatif, Kwitansi, Laporan.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="2"><div class="title">Verifikasi Awal & Kode MAK — <span class="badge">Verifikator/Sekretariat</span></div>
-        <div>Pemeriksaan kelengkapan, kesesuaian MAK dengan DIPA/POK, dan ketersediaan pagu.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="3"><div class="title">Input ke SAKTI — <span class="badge">Operator Pembayaran</span></div>
-        <div>Input pada aplikasi SAKTI & penyusunan Draf SPP.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="4"><div class="title">Pengujian Materiil & SPP-LS — <span class="badge">PPK</span></div>
-        <div>Pengujian materiil & penerbitan SPP-LS.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="5"><div class="title">Pengujian Formal & SPM — <span class="badge">PPSPM</span></div>
-        <div>Pengujian formal SPP & penerbitan SPM.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="6"><div class="title">SP2D — <span class="badge">KPPN</span></div>
-        <div>Penerbitan SP2D.</div></div>
-        <div class="arrow">▼</div>
-        <div class="step" data-step="7"><div class="title">Pembayaran — <span class="badge">Bendahara/Rekanan</span></div>
-        <div>Transfer dana & pengarsipan.</div></div>
-      </div>
-    </section>
+        <tr class="section"><td colspan="7">2. PENGGUNAAN ANGGARAN UNTUK KEGIATAN</td></tr>
+        <tr><td>Penggunaan Anggaran</td><td><label><input type="checkbox"> 1. Surat / Nota Dinas Pengajuan</label></td><td class="center"><input type="radio" name="gi1a"></td><td class="center"><input type="radio" name="gi1a"></td><td class="center"><input type="radio" name="gi1b"></td><td class="center"><input type="radio" name="gi1b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 2. Rencana kerja / TOR / KAK</label></td><td class="center"><input type="radio" name="gi2a"></td><td class="center"><input type="radio" name="gi2a"></td><td class="center"><input type="radio" name="gi2b"></td><td class="center"><input type="radio" name="gi2b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 3. Rincian Anggaran Biaya (RAB)</label></td><td class="center"><input type="radio" name="gi3a"></td><td class="center"><input type="radio" name="gi3a"></td><td class="center"><input type="radio" name="gi3b"></td><td class="center"><input type="radio" name="gi3b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 4. Surat Pernyataan Penggunaan Uang Muka (SPTJM/NUM)</label></td><td class="center"><input type="radio" name="gi4a"></td><td class="center"><input type="radio" name="gi4a"></td><td class="center"><input type="radio" name="gi4b"></td><td class="center"><input type="radio" name="gi4b"></td><td><textarea></textarea></td></tr>
+        <tr><td></td><td><label><input type="checkbox"> 5. Kwitansi Bukti Pembayaran Uang Muka</label></td><td class="center"><input type="radio" name="gi5a"></td><td class="center"><input type="radio" name="gi5a"></td><td class="center"><input type="radio" name="gi5b"></td><td class="center"><input type="radio" name="gi5b"></td><td><textarea></textarea></td></tr>
 
-    <!-- CHECKLIST -->
-    <section id="checklist" class="card">
-      <h2>Checklist Kelengkapan Dokumen dalam SPM</h2>
-      <table>
-        <thead>
-          <tr><th style="width:48px">No</th><th>Dokumen</th><th>Keterangan</th><th style="width:90px">Status</th><th>Catatan</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Surat Pengantar / Nota Dinas</td><td>Pengantar dari unit kerja pemohon pembayaran</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>2</td><td>SPP-LS dari PPK</td><td>Surat Permintaan Pembayaran lengkap dengan tanda tangan PPK</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>3</td><td>RAB / KAK / Kontrak</td><td>Dokumen dasar kegiatan sesuai output</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>4</td><td>Bukti Pembayaran / Kwitansi</td><td>Faktur/Invoice & bukti penerimaan</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>5</td><td>Dokumen Perpajakan</td><td>Faktur Pajak, SSP/SSP Pajak, Bukti Potong</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>6</td><td>Rekening Penerima / Nominatif</td><td>Data rekening valid penerima hak</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-          <tr><td>7</td><td>Laporan Pertanggungjawaban (LPJ)</td><td>Laporan kegiatan & dokumentasi</td><td class="checkbox"><input type="checkbox" /></td><td></td></tr>
-        </tbody>
-      </table>
-    </section>
+        <tr class="section"><td colspan="7">3. PERGANTIAN BIAYA (REIMBURSE)</td></tr>
+        <tr><td>Pergantian Biaya</td><td><label><input type="checkbox"> 1. Kwitansi / tanda bukti pengeluaran lain</label></td><td class="center"><input type="radio" name="re1a"></td><td class="center"><input type="radio" name="re1a"></td><td class="center"><input type="radio" name="re1b"></td><td class="center"><input type="radio" name="re1b"></td><td><textarea></textarea></td></tr>
+      </tbody>
+    </table>
 
-    <div style="text-align:center;margin:18px 0">
+    <div style="text-align:center;margin-top:8px">
       <a class="btn" href="javascript:window.print()">🖨️ Cetak / Simpan PDF</a>
     </div>
+  </section>
 
-    <footer class="card" style="text-align:center">
-      <div>© BPODT • Divisi Keuangan — Versi HTML cetak</div>
-    </footer>
-  </div>
+  <footer class="card tight" style="text-align:center">
+    © BPODT • Divisi Keuangan — Versi HTML cetak (A4 Portrait) — v18
+  </footer>
+</div>
 </body>
 </html>
